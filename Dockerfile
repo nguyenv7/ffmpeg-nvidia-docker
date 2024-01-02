@@ -1,4 +1,8 @@
-FROM nvidia/cuda:latest
+FROM nvidia/cuda:11.6.1-cudnn8-devel-ubuntu20.04
+
+ENV DEBIAN_FRONTEND=noninteractive 
+
+RUN apt update && apt install -y ffmpeg
 
 ENV NVIDIA_VISIBLE_DEVICES all
 ENV NVIDIA_DRIVER_CAPABILITIES compute,video,utility
