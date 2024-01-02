@@ -1,6 +1,12 @@
 # NVIDIA accelerated ffmpeg with docker
 
-Usaging
+## Build
+
+```
+docker build -t ffnvidia .
+```
+
+## Usaging
 
 ```
 docker run --runtime=nvidia -v host_path:/video  -it ffnvidia ffmpeg -y -i /video/video.mp4  -c:v h264_nvenc output.mp4
