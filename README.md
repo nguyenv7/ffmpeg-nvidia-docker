@@ -8,8 +8,14 @@ docker build -t ffnvidia .
 
 ## Usaging
 
+Only use nvidia encoder
 ```
 docker run --runtime=nvidia -v host_path:/video  -it ffnvidia ffmpeg -y -i /video/video.mp4  -c:v h264_nvenc output.mp4
+```
+
+Use nvidia decoder and encoder 
+```
+docker run --runtime=nvidia -v host_path:/video  -it ffnvidia ffmpeg -y -hwaccel_device 0 -hwaccel cuvid -c:v h264_cuvid -i /video/video.mp4 -c:v h264_nvenc output.mp4
 ```
 
 # Accknowledgement 
