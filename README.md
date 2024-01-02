@@ -1,3 +1,11 @@
+# NVIDIA accelerated ffmpeg with docker
+
+Usaging
+
+```
+docker run --runtime=nvidia -v host_path:/video  -it ffnvidia ffmpeg -y -i /video/video.mp4  -c:v h264_nvenc output.mp4
+```
+
 NVENC and NvFBC patches for Nvidia drivers
 ==========================================
 
